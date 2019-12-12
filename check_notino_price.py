@@ -15,7 +15,6 @@ print('Enter password for sending email account: ')
 password=input()
 
 URL = 'https://www.notino.de/armani/code-profumo-eau-de-parfum-fur-herren/p-541287/'
-
 headers = {"User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0'}
 
 count = 0
@@ -25,9 +24,7 @@ while True:
 
         def check_price():
                 page = requests.get(URL, headers=headers)
-
                 soup = BeautifulSoup(page.content, 'html.parser')
-
                 title = soup.find(id="pdHeader").get_text()
                 price = soup.find(id="pd-price").get_text()
                 converted_price = float(price[0:2])
@@ -55,7 +52,6 @@ while True:
                         msg
                 )
                 print('Email has been sent.')
-
                 server.quit()
 
         check_price()
