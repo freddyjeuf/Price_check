@@ -58,6 +58,6 @@ while True:
 
         time.sleep(43200) #43200sec = 12 hours
 
-
+# implement error handling
 
 
